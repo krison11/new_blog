@@ -34,6 +34,13 @@ import Vuex from "vuex";
   }
 })
 export default class Index extends Vue {
+head() {
+    return {
+      script: [
+        { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
+      ]
+    };
+  }
  
   // get homePage() {
   //   return this.$store.state.homeContent;
