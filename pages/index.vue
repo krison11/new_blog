@@ -24,8 +24,7 @@ import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import Vuex from "vuex";
 
-@Component
-export default class Index extends Vue {
+@Component({
 head() {
     return {
       script: [
@@ -33,16 +32,8 @@ head() {
       ]
     };
   }
-  
-if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
+})
+export default class Index extends Vue {
   // get homePage() {
   //   return this.$store.state.homeContent;
   // }
