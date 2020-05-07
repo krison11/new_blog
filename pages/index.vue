@@ -24,16 +24,16 @@ import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import Vuex from "vuex";
 
-@Component({
- head() {
+@Component
+export default class Index extends Vue {
+head() {
     return {
       script: [
         { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
       ]
     };
   }
-})
-export default class Index extends Vue {
+  
 if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {
       if (!user) {
